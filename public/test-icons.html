@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FontAwesome Icon Test</title>
+    
+    <!-- Font Awesome - Multiple Sources -->
+    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .icon-test { margin: 10px; padding: 10px; border: 1px solid #ccc; display: inline-block; }
+        .icon-test i { font-size: 24px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>FontAwesome Icon Test</h1>
+    
+    <div class="icon-test">
+        <i class="fas fa-sliders-h"></i> fa-sliders-h
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-file"></i> fa-file
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-download"></i> fa-download
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-trash"></i> fa-trash
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-refresh"></i> fa-refresh
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-filter"></i> fa-filter
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-calendar"></i> fa-calendar
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-copy"></i> fa-copy
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-edit"></i> fa-edit
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-save"></i> fa-save
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-print"></i> fa-print
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-home"></i> fa-home
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-user"></i> fa-user
+    </div>
+    
+    <div class="icon-test">
+        <i class="fas fa-cog"></i> fa-cog
+    </div>
+    
+    <script>
+        // Check FontAwesome loading
+        setTimeout(function() {
+            const testIcon = document.createElement('i');
+            testIcon.className = 'fas fa-home';
+            testIcon.style.position = 'absolute';
+            testIcon.style.left = '-9999px';
+            document.body.appendChild(testIcon);
+            
+            const computedStyle = window.getComputedStyle(testIcon);
+            const fontFamily = computedStyle.fontFamily;
+            
+            document.body.removeChild(testIcon);
+            
+            const status = document.createElement('div');
+            status.style.cssText = 'position: fixed; top: 10px; right: 10px; background: ' + 
+                (fontFamily.indexOf('Font Awesome') !== -1 ? 'green' : 'red') + 
+                '; color: white; padding: 10px; border-radius: 5px; z-index: 9999;';
+            status.textContent = 'FontAwesome: ' + (fontFamily.indexOf('Font Awesome') !== -1 ? 'LOADED ✓' : 'FAILED ✗');
+            document.body.appendChild(status);
+            
+            console.log('FontAwesome Status:', fontFamily.indexOf('Font Awesome') !== -1 ? 'LOADED' : 'FAILED');
+            console.log('Font Family:', fontFamily);
+        }, 1000);
+    </script>
+</body>
+</html>

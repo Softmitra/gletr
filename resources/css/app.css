@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stone Theme Inspired by Reference Design */
+@layer base {
+    :root {
+        --primary-color: #f2e2d0;
+        --secondary-color: #1a1a1a;
+        --accent-color: #c4a185;
+        
+        /* Stone Color Palette */
+        --stone-50: #fafaf9;
+        --stone-100: #f5f5f4;
+        --stone-200: #e7e5e4;
+        --stone-300: #d6d3d1;
+        --stone-400: #a8a29e;
+        --stone-500: #78716c;
+        --stone-600: #57534e;
+        --stone-700: #44403c;
+        --stone-800: #292524;
+        --stone-900: #1c1917;
+        
+        /* Amber Accent Colors */
+        --amber-400: #fbbf24;
+        --amber-500: #f59e0b;
+        --amber-600: #d97706;
+    }
+    
+    * {
+        font-family: "Spline Sans", "Noto Sans", sans-serif !important;
+    }
+    
+    body {
+        font-family: "Spline Sans", "Noto Sans", sans-serif !important;
+        @apply antialiased leading-relaxed;
+        color: var(--stone-800);
+        background-color: white;
+    }
+    
+    html {
+        font-family: "Spline Sans", "Noto Sans", sans-serif !important;
+    }
+    
+    /* Custom Radio Button Style */
+    .custom-radio:checked {
+        background-image: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27%23c4a185%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+        border-color: var(--accent-color);
+    }
+    
+    /* Typography Hierarchy - Stone Theme */
+    h1 {
+        @apply text-4xl font-extrabold tracking-tighter;
+        color: var(--stone-900);
+    }
+    
+    h2 {
+        @apply text-2xl font-bold tracking-tight;
+        color: var(--stone-900);
+    }
+    
+    h3 {
+        @apply text-lg font-semibold;
+        color: var(--stone-800);
+    }
+    
+    h4 {
+        @apply text-base font-semibold;
+        color: var(--stone-800);
+    }
+    
+    /* Text Utilities */
+    .text-stone-primary {
+        color: var(--stone-900);
+    }
+    
+    .text-stone-secondary {
+        color: var(--stone-600);
+    }
+    
+    .text-accent {
+        color: var(--accent-color);
+    }
+    
+    .bg-accent {
+        background-color: var(--accent-color);
+    }
+}
+
+/* Custom Font Classes */
+@layer components {
+    .font-inter {
+        font-family: var(--font-inter);
+    }
+    
+    .font-playfair {
+        font-family: var(--font-playfair);
+    }
+    
+    /* Luxury Components */
+    .luxury-gold {
+        color: var(--luxury-gold);
+    }
+    
+    .luxury-gold:hover {
+        color: var(--luxury-gold-dark);
+    }
+    
+    .luxury-button {
+        background-color: var(--amber-500);
+        @apply text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+        font-family: "Spline Sans", "Noto Sans", sans-serif;
+    }
+    
+    .luxury-button:hover {
+        background-color: var(--amber-600);
+        @apply transform -translate-y-0.5;
+    }
+    
+    .luxury-card {
+        @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+        border: 1px solid var(--stone-100);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+    }
+    
+    .luxury-card:hover {
+        @apply transform -translate-y-1;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .luxury-section {
+        @apply py-16 bg-gradient-to-b from-white to-gray-50;
+    }
+    
+    /* Brand Logo Typography */
+    .brand-logo {
+        font-family: var(--font-playfair);
+        @apply text-2xl md:text-3xl font-bold tracking-wide;
+        color: var(--luxury-gold);
+    }
+    
+    /* Navigation Typography */
+    .nav-link {
+        font-family: var(--font-inter);
+        @apply text-sm md:text-base font-medium tracking-wide;
+        color: var(--luxury-gray);
+    }
+    
+    .nav-link:hover {
+        color: var(--luxury-gold);
+    }
+    
+    /* Button Typography */
+    .btn-primary {
+        font-family: var(--font-inter);
+        @apply text-sm md:text-base font-semibold tracking-wide;
+    }
+    
+    .btn-secondary {
+        font-family: var(--font-inter);
+        @apply text-sm md:text-base font-medium tracking-wide;
+    }
+    
+    /* Form Typography */
+    .form-label {
+        font-family: var(--font-inter);
+        @apply text-sm font-medium tracking-wide;
+        color: var(--luxury-black);
+    }
+    
+    .form-input {
+        font-family: var(--font-inter);
+        @apply text-base leading-normal;
+    }
+    
+    /* Special Typography Classes */
+    .luxury-display {
+        font-family: var(--font-playfair);
+        @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tight;
+        background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .luxury-subtitle {
+        font-family: var(--font-inter);
+        @apply text-lg md:text-xl font-light leading-relaxed tracking-wide;
+        color: var(--luxury-gray);
+    }
+    
+    .luxury-accent {
+        font-family: var(--font-playfair);
+        @apply italic;
+        color: var(--luxury-gold);
+    }
+}

@@ -1,0 +1,44 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+        - config/
+        - database/
+        - routes/
+        - tests/
+
+    # Rule level (0-9, 9 is strictest)
+    level: 6
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#Access to an undefined property#'
+        - '#Call to an undefined method#'
+
+    excludePaths:
+        - ./vendor/*
+        - ./storage/*
+        - ./bootstrap/cache/*
+        - ./node_modules/*
+
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    reportUnmatchedIgnoredErrors: false
+
+    # Laravel specific configurations
+    scanDirectories:
+        - ./app/
+        - ./database/
+
+    # Blade template analysis
+    checkAlwaysTrueCheckTypeFunctionCall: true
+    checkAlwaysTrueInstanceof: true
+    checkAlwaysTrueStrictComparison: true
+    checkExplicitMixedMissingReturn: true
+    checkFunctionNameCase: true
+    checkInternalClassCaseSensitivity: true
+
+    # Memory limit for analysis
+    memoryLimitFile: 1G
